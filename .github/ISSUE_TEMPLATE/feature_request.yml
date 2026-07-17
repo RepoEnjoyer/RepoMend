@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a focused deterministic check, report, or safe fix.
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Repository problem
+      description: What concrete failure or repeated manual task should RepoMend address?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Deterministic evidence
+      description: What local evidence can identify the problem without AI or uploading source?
+    validations:
+      required: true
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Safe remediation
+      description: What should the report recommend, and could an idempotent fixer exist?
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and false-positive considerations
+    validations:
+      required: true

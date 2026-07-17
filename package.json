@@ -1,0 +1,62 @@
+{
+  "name": "repomend",
+  "version": "1.0.0",
+  "description": "A privacy-safe repository doctor for Git, CI, dependencies, documentation, and GitHub publishing readiness.",
+  "type": "module",
+  "bin": {
+    "repomend": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build",
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepack": "npm run check"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "repository",
+    "doctor",
+    "privacy",
+    "ci",
+    "cli"
+  ],
+  "author": "RepoEnjoyer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RepoEnjoyer/RepoMend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RepoEnjoyer/RepoMend/issues"
+  },
+  "homepage": "https://github.com/RepoEnjoyer/RepoMend#readme",
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.13.3",
+    "eslint": "10.7.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.64.0",
+    "vite": "8.1.5",
+    "vitest": "4.1.10"
+  }
+}
